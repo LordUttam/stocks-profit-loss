@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&family=Poppins&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <title>Profit or Loss</title>
+</head>
+
+<body>
+
+    <main>
+        <nav>
+            <ul>
+                <li id="avatar">
+                    <a href="https://uttamsharma.me"><img src="./images/themes/avatar.jpg" alt="My Portfolio"></a>
+                </li>
+                <li id="repo">
+                    <a href="https://github.com/LordUttam/profit-loss-calc">Github Repo</a>
+                </li>
+                <li id="connect">
+                    <a href="https://www.linkedin.com/in/uttam-sharma-55a588178/">Connect With Me</a>
+                </li>
+            </ul>
+        </nav>
+
+        <h1>Stock Profit/Loss Calculator</h1>
+        <section>
+            <div id="mood-hero"></div>
+            <div id="inputs">
+                <label for="initial-price" class="input-label">
+                    Initial Price
+                </label>
+                <input type="number" min="1" class="input" id="initial-price"
+                    placeholder="Enter the initial price here">
+                <label for="quantity" class="input-label">
+                    Quantity
+                </label>
+                <input type="number" min="1" class="input" id="quantity"
+                    placeholder="Enter the number of stocks bought">
+                <label for="current-price" class="input-label">
+                    Current Price
+                </label>
+                <input type="number" min="1" class="input" id="current-price"
+                    placeholder="Enter the current price here">
+                <button id="calculate">Calculate</button>
+            </div>
+            <div id="result"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+    </footer>
+</body>
+
+</html>
