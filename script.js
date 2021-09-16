@@ -38,25 +38,52 @@ function calculate() {
     );
   } else if (current > initial) {
     let profit = (current - initial) * quantity;
+    profit = profit.toFixed(2);
     let profitPercentage =
       (((current - initial) * quantity) / (initial * quantity)) * 100;
+    profitPercentage = profitPercentage.toFixed(2);
 
     showResult(
       `🙌 You profitted by ${profitPercentage}%. Your net profit is ₹${profit}. 📈`
     );
-
-    changeTheme("happy");
+    if (profitPercentage > 50) {
+      changeTheme("happy");
+    }
   } else {
     let loss = (initial - current) * quantity;
+    loss = loss.toFixed(2);
     let lossPercentage =
       (((initial - current) * quantity) / (initial * quantity)) * 100;
-
+    lossPercentage = lossPercentage.toFixed(2);
     showResult(
       `🙁 You suffered a loss of ${lossPercentage}%. You lost ₹${loss}. 📉`
     );
-
-    changeTheme("loss");
+    if (lossPercentage > 50) {
+      changeTheme("loss");
+    }
   }
 }
 
-calcBtn.addEventListener("click", calculate);
+function clickHandler() {
+  if (
+    initialPrice.value != "" &&
+    currentPrice.value != "" &&
+    quantityInput.value != ""
+  ) {
+    if (
+      Number(initialPrice.value) > 0 &&
+      Number(currentPrice.value) > 0 &&
+      Number(quantityInput.value) > 0
+    ) {
+      calculate();
+    } else {
+      showResult(
+        "You can not enter ZERO or NEGATIVE numbers as inputs. Try again with correct information."
+      );
+    }
+  } else {
+    showResult("Inputs can't be empty. You must fill something.");
+  }
+}
+
+calcBtn.addEventListener("click", clickHandler);
